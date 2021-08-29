@@ -8,6 +8,7 @@ export const PasswordManagerMasterPassword = () => {
   const inputDigitsRef = useRef();
   const history = useHistory();
   const masterPassword = useSelector(
+    // @ts-ignore
     (state) => state.masterPassword.masterPassword
   );
 

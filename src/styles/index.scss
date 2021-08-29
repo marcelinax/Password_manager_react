@@ -1,8 +1,9 @@
 @import "boxicons";
-
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap");
 * {
   padding: 0;
   margin: 0;
+  font-family: "Poppins", sans-serif;
 }
 
 @keyframes animate-shake {
@@ -93,6 +94,200 @@
     }
     .master-password-button-hidden {
       opacity: 0;
+    }
+  }
+}
+.password-manager-add-new-list-item {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  width: calc(100% - 4rem);
+  padding: 1rem 2rem;
+  background-color: black;
+  .top-menu {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1rem;
+    p {
+      color: white;
+      font-size: 14px;
+    }
+    button {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 50%;
+      border: 1px solid white;
+      background-color: transparent;
+      width: 20px;
+      height: 20px;
+      padding: 8px;
+      &:first-of-type {
+        color: white;
+      }
+      &:last-of-type {
+        color: #206c62;
+      }
+    }
+  }
+  .password-manager-form {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+
+    &-input {
+      display: flex;
+      flex-direction: column;
+      margin-bottom: 1rem;
+      position: relative;
+
+      input {
+        outline: none;
+        border: none;
+        border-bottom: 1px solid #242627;
+        background-color: transparent;
+        padding-bottom: 0.3rem;
+        color: white;
+        font-size: 13px;
+      }
+
+      label {
+        font-size: 12px;
+        color: #242627;
+        font-weight: 600;
+        margin-bottom: 0.2rem;
+      }
+      i {
+        position: absolute;
+        top: 50%;
+        transform: translate(-50%, 0);
+        right: 0;
+        color: #242627;
+      }
+    }
+  }
+  button {
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px 0;
+    width: 100%;
+    background-color: #242627;
+    outline: none;
+    border: none;
+    color: white;
+  }
+}
+.password-manager {
+  height: 100vh;
+  width: calc(100% - 2rem);
+  padding: 1rem;
+  background-color: black;
+  display: flex;
+  flex-direction: column;
+  &-top-menu {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 2rem;
+    button {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 20px;
+      height: 20px;
+      background-color: transparent;
+      outline: none;
+      border: none;
+      color: white;
+      &:first-of-type {
+        font-size: 1.3rem;
+      }
+      &:last-of-type {
+        border: 1px solid white;
+        border-radius: 50%;
+      }
+    }
+    p {
+      color: white;
+      font-size: 14px;
+    }
+  }
+  &-list {
+    width: calc(100% - 2rem);
+    display: flex;
+    flex-direction: column;
+    &-item {
+      width: calc(100% - 10px);
+      display: flex;
+      align-items: center;
+      padding: 10px 20px;
+      position: relative;
+      justify-content: space-between;
+      border-radius: 10px;
+      overflow-x: hidden;
+      &:hover {
+        background-color: #1b1b1b;
+      }
+      &-left {
+        display: flex;
+        align-items: center;
+      }
+      &-icon {
+        width: 30px;
+        height: 30px;
+        border-radius: 10px;
+        border: 1px solid #888b8c;
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center;
+        background-color: transparent;
+      }
+      &-info {
+        display: flex;
+        flex-direction: column;
+        margin-left: 1rem;
+
+        .app-name {
+          color: white;
+          font-size: 13px;
+        }
+        .login {
+          color: #888b8c;
+          font-size: 10px;
+        }
+      }
+      i {
+        color: #888b8c;
+        font-size: 1.3rem;
+        transition: 1s all;
+        right: 0;
+        position: relative;
+      }
+      .bx-copy-translate-left {
+        right: 13%;
+      }
+      .password-manager-list-item-delete-btn {
+        display: flex;
+        opacity: 0;
+        right: -70px;
+        position: absolute;
+        transition: 1s all;
+        height: 100%;
+        border-radius: 10px;
+        align-items: center;
+        background-color: #183534;
+        justify-content: center;
+        width: 50px;
+        &--active {
+          opacity: 1;
+          right: 0;
+        }
+      }
     }
   }
 }
