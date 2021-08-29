@@ -1,0 +1,98 @@
+@import "boxicons";
+
+* {
+  padding: 0;
+  margin: 0;
+}
+
+@keyframes animate-shake {
+  0% {
+    transform: translateY(-4px);
+  }
+  15% {
+    transform: translateY(4px);
+  }
+  30% {
+    transform: translateY(-4px);
+  }
+  45% {
+    transform: translateY(4px);
+  }
+  60% {
+    transform: translateY(-4px);
+  }
+  75% {
+    transform: translateY(4px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+.master-password {
+  background-color: #242627;
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  align-items: center;
+  justify-content: space-around;
+  input {
+    display: none;
+  }
+  .lock {
+    color: #eb5e28;
+    font-size: 2rem;
+  }
+  .input-digits {
+    display: flex;
+    &.animate-shake {
+      animation: 0.8s animate-shake;
+      animation-timing-function: cubic-bezier();
+    }
+    .input-digit,
+    .input-digit--active {
+      width: 15px;
+      height: 15px;
+      background-color: transparent;
+      border: 1px solid #888b8c;
+      border-radius: 50%;
+      margin-right: 0.5rem;
+      transition: 1s all;
+
+      &:last-of-type {
+        margin-right: 0;
+      }
+      &--active {
+        background-color: #888b8c;
+      }
+    }
+  }
+  &-buttons {
+    display: flex;
+    flex-wrap: wrap-reverse;
+    padding: 0 1rem;
+    justify-content: center;
+    .master-password-button,
+    .master-password-button-with-icon {
+      border-radius: 20px;
+      background: linear-gradient(225deg, #202223, #27292a);
+      box-shadow: -8px 8px 16px #212324, 8px -8px 16px #27292a;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 80px;
+      height: 80px;
+      margin: 0.5rem;
+      outline: none;
+      border: none;
+      color: #888b8c;
+      font-size: 1.5rem;
+      i {
+        color: #eb5e28;
+      }
+    }
+    .master-password-button-hidden {
+      opacity: 0;
+    }
+  }
+}
