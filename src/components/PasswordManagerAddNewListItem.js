@@ -1,14 +1,14 @@
-import React from "react";
-import { createPasswordAndLogin } from "../state/userPasswordsAndLoginsSlice";
-import { useDispatch } from "react-redux";
-import { useHistory } from "react-router-dom";
-import { useState } from "react";
+import React from 'react';
+import { createPasswordAndLogin } from '../state/userPasswordsAndLoginsSlice';
+import { useDispatch } from 'react-redux';
+import { useHistory } from 'react-router-dom';
+import { useState } from 'react';
 
 export const PasswordManagerAddNewListItem = () => {
-  const [appName, setAppName] = useState("");
-  const [iconUrl, setIconUrl] = useState("");
-  const [login, setLogin] = useState("");
-  const [password, setPassword] = useState("");
+  const [appName, setAppName] = useState('');
+  const [iconUrl, setIconUrl] = useState('');
+  const [login, setLogin] = useState('');
+  const [password, setPassword] = useState('');
   const [seePassword, setSeePassword] = useState(false);
   const dispatch = useDispatch();
   const history = useHistory();
@@ -34,7 +34,7 @@ export const PasswordManagerAddNewListItem = () => {
       password,
     };
     dispatch(createPasswordAndLogin(newPasswordManagerItem));
-    history.push("/password-manager");
+    history.push('/password-manager');
   };
 
   return (
@@ -44,16 +44,16 @@ export const PasswordManagerAddNewListItem = () => {
           <i
             className="bx bx-x"
             onClick={() => {
-              history.push("/password-manager");
+              history.push('/password-manager');
             }}
-          ></i>
+          />
         </button>
         <p>Add a Password</p>
         <button>
           <i
             className="bx bx-check"
             onClick={() => {
-              history.push("/password-manager");
+              history.push('/password-manager');
             }}
           ></i>
         </button>
@@ -62,22 +62,22 @@ export const PasswordManagerAddNewListItem = () => {
         <div className="password-manager-form-input">
           <label>APP NAME</label>
           <input value={appName} onChange={handleAppNameInput}></input>
-          <i className="bx bxs-x-circle" onClick={() => setAppName("")}></i>
+          <i className="bx bxs-x-circle" onClick={() => setAppName('')}></i>
         </div>
         <div className="password-manager-form-input">
           <label>APP ICON URL</label>
           <input value={iconUrl} onChange={handleIconUrlInput}></input>
-          <i className="bx bxs-x-circle" onClick={() => setIconUrl("")}></i>
+          <i className="bx bxs-x-circle" onClick={() => setIconUrl('')}></i>
         </div>
         <div className="password-manager-form-input">
           <label>LOGIN</label>
           <input value={login} onChange={handleLoginInput}></input>
-          <i className="bx bxs-x-circle" onClick={() => setLogin("")}></i>
+          <i className="bx bxs-x-circle" onClick={() => setLogin('')}></i>
         </div>
         <div className="password-manager-form-input">
           <label>PASSWORD</label>
           <input
-            type={seePassword ? "text" : "password"}
+            type={seePassword ? 'text' : 'password'}
             value={password}
             onChange={handlePasswordInput}
           ></input>

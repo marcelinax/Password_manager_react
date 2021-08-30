@@ -1,5 +1,6 @@
 @import "boxicons";
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap");
+
 * {
   padding: 0;
   margin: 0;
@@ -30,26 +31,31 @@
   }
 }
 
-.master-password {
+.master-password, .password-manager-change-master-password {
   background-color: #242627;
   display: flex;
   flex-direction: column;
   height: 100vh;
   align-items: center;
   justify-content: space-around;
+
   input {
     display: none;
   }
+
   .lock {
     color: #eb5e28;
     font-size: 2rem;
   }
+
   .input-digits {
     display: flex;
+
     &.animate-shake {
       animation: 0.8s animate-shake;
       animation-timing-function: cubic-bezier();
     }
+
     .input-digit,
     .input-digit--active {
       width: 15px;
@@ -63,18 +69,22 @@
       &:last-of-type {
         margin-right: 0;
       }
+
       &--active {
         background-color: #888b8c;
       }
     }
   }
+
   &-buttons {
     display: flex;
     flex-wrap: wrap-reverse;
     padding: 0 1rem;
     justify-content: center;
+
     .master-password-button,
-    .master-password-button-with-icon {
+    .master-password-button-with-icon, .change-master-password-button,
+    .change-master-password-button-with-icon {
       border-radius: 20px;
       background: linear-gradient(225deg, #202223, #27292a);
       box-shadow: -8px 8px 16px #212324, 8px -8px 16px #27292a;
@@ -88,32 +98,33 @@
       border: none;
       color: #888b8c;
       font-size: 1.5rem;
+
       i {
         color: #eb5e28;
       }
     }
-    .master-password-button-hidden {
+
+    .master-password-button-hidden, .change-master-password-button-hidden {
       opacity: 0;
     }
   }
 }
-.password-manager-add-new-list-item {
-  display: flex;
-  flex-direction: column;
-  height: 100vh;
-  width: calc(100% - 4rem);
-  padding: 1rem 2rem;
-  background-color: black;
-  .top-menu {
-    width: 100%;
+
+.password-manager-change-master-password {
+
+
+  &-top-menu {
+    width: calc(100% - 2rem);
     display: flex;
     justify-content: space-between;
     align-items: center;
     margin-bottom: 1rem;
+
     p {
       color: white;
       font-size: 14px;
     }
+
     button {
       display: flex;
       align-items: center;
@@ -124,14 +135,85 @@
       width: 20px;
       height: 20px;
       padding: 8px;
+
       &:first-of-type {
         color: white;
       }
+
       &:last-of-type {
         color: #206c62;
       }
     }
   }
+
+  &-digits {
+    display: flex;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+  }
+
+  &-digit {
+    height: 30px;
+    width: 30px;
+    background-color: transparent;
+    border-bottom: 1px solid #888b8c;
+    margin-right: .5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    &:last-of-type {
+      margin-right: 0;
+    }
+
+    p {
+      color: white;
+    }
+  }
+}
+
+.password-manager-add-new-list-item {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  width: calc(100% - 4rem);
+  padding: 1rem 2rem;
+  background-color: black;
+
+  .top-menu {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1rem;
+
+    p {
+      color: white;
+      font-size: 14px;
+    }
+
+    button {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 50%;
+      border: 1px solid white;
+      background-color: transparent;
+      width: 20px;
+      height: 20px;
+      padding: 8px;
+
+      &:first-of-type {
+        color: white;
+      }
+
+      &:last-of-type {
+        color: #206c62;
+      }
+    }
+  }
+
   .password-manager-form {
     display: flex;
     flex-direction: column;
@@ -153,12 +235,28 @@
         font-size: 13px;
       }
 
+      input:-webkit-autofill,
+      input:-webkit-autofill:hover,
+      input:-webkit-autofill:focus
+      textarea:-webkit-autofill,
+      textarea:-webkit-autofill:hover
+      textarea:-webkit-autofill:focus,
+      select:-webkit-autofill,
+      select:-webkit-autofill:hover,
+      select:-webkit-autofill:focus {
+        border-bottom: 1px solid #242627;
+        -webkit-text-fill-color: white;
+        -webkit-box-shadow: 0 0 0 0 #000 inset;
+        transition: background-color 5000s ease-in-out 0s;
+      }
+
       label {
         font-size: 12px;
         color: #242627;
         font-weight: 600;
         margin-bottom: 0.2rem;
       }
+
       i {
         position: absolute;
         top: 50%;
@@ -168,6 +266,7 @@
       }
     }
   }
+
   button {
     border-radius: 5px;
     display: flex;
@@ -181,6 +280,7 @@
     color: white;
   }
 }
+
 .password-manager {
   height: 100vh;
   width: calc(100% - 2rem);
@@ -188,12 +288,14 @@
   background-color: black;
   display: flex;
   flex-direction: column;
+
   &-top-menu {
     width: 100%;
     display: flex;
     justify-content: space-between;
     align-items: center;
     margin-bottom: 2rem;
+
     button {
       display: flex;
       align-items: center;
@@ -204,23 +306,28 @@
       outline: none;
       border: none;
       color: white;
+
       &:first-of-type {
         font-size: 1.3rem;
       }
+
       &:last-of-type {
         border: 1px solid white;
         border-radius: 50%;
       }
     }
+
     p {
       color: white;
       font-size: 14px;
     }
   }
+
   &-list {
     width: calc(100% - 2rem);
     display: flex;
     flex-direction: column;
+
     &-item {
       width: calc(100% - 10px);
       display: flex;
@@ -230,13 +337,16 @@
       justify-content: space-between;
       border-radius: 10px;
       overflow-x: hidden;
+
       &:hover {
         background-color: #1b1b1b;
       }
+
       &-left {
         display: flex;
         align-items: center;
       }
+
       &-icon {
         width: 30px;
         height: 30px;
@@ -247,6 +357,7 @@
         background-position: center;
         background-color: transparent;
       }
+
       &-info {
         display: flex;
         flex-direction: column;
@@ -256,11 +367,13 @@
           color: white;
           font-size: 13px;
         }
+
         .login {
           color: #888b8c;
           font-size: 10px;
         }
       }
+
       i {
         color: #888b8c;
         font-size: 1.3rem;
@@ -268,9 +381,11 @@
         right: 0;
         position: relative;
       }
+
       .bx-copy-translate-left {
         right: 13%;
       }
+
       .password-manager-list-item-delete-btn {
         display: flex;
         opacity: 0;
@@ -283,6 +398,7 @@
         background-color: #183534;
         justify-content: center;
         width: 50px;
+
         &--active {
           opacity: 1;
           right: 0;
